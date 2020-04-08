@@ -80,6 +80,10 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
 
         String lastName = lastNameEditText.getText().toString();
 
+        String dobString = dobEditText.getText().toString();
+        if(dobString.trim().isEmpty()){
+            dobEditText.setError("Date of Birth can't be empty");
+        }
 
         callback.goToNextStep();
 

@@ -1,5 +1,6 @@
 package com.example.c0773839_w2020_mad3125_midterm.Model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 enum Gender{
@@ -13,7 +14,7 @@ public class CRACustomer {
     private String SIN;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private Gender gender;
     private Float grossIncome;
     private Float RRSP;
@@ -23,7 +24,7 @@ public class CRACustomer {
     }
 
 
-    public CRACustomer(String SIN, String firstName, String lastName, Date dateOfBirth, Gender gender, Float grossIncome, Float RRSP) {
+    public CRACustomer(String SIN, String firstName, String lastName, LocalDate dateOfBirth, Gender gender, Float grossIncome, Float RRSP) {
         this.SIN = SIN;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -45,7 +46,7 @@ public class CRACustomer {
         return lastName;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -73,7 +74,7 @@ public class CRACustomer {
         this.lastName = lastName;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
