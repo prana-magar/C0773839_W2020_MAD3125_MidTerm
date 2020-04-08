@@ -36,7 +36,6 @@ public class SinFragment extends Fragment  implements BlockingStep {
 
     @Override
     public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
-        Toast.makeText(this.getContext(), "Next Clicked", Toast.LENGTH_SHORT).show();
         callback.goToNextStep();
 
     }
