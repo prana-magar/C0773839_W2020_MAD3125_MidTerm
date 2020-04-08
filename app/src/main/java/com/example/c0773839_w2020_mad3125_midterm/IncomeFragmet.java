@@ -43,7 +43,7 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
 
     @Override
     public void onCompleteClicked(StepperLayout.OnCompleteClickedCallback callback) {
-        Toast.makeText(this.getContext(), "Complete clicked frag", Toast.LENGTH_SHORT).show();
+        callback.complete();
 
     }
 

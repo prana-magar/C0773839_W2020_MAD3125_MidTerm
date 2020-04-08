@@ -2,6 +2,7 @@ package com.example.c0773839_w2020_mad3125_midterm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
 
     @Override
     public void onCompleted(View completeButton) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        startActivity(intent);
 
     }
 
