@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        craCustomer = new CRACustomer();
         setContentView(R.layout.activity_main);
         mStepperLayout = (StepperLayout) findViewById(R.id.stepperLayout);
         mStepperLayout.setAdapter(new StepperAdapter(getSupportFragmentManager(), this));

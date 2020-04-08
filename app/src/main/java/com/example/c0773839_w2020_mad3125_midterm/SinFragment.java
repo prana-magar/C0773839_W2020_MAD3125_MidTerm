@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
 import com.example.c0773839_w2020_mad3125_midterm.Util.Validation;
 import com.google.android.material.textfield.TextInputEditText;
@@ -61,6 +62,8 @@ public class SinFragment extends Fragment  implements BlockingStep {
         }
 
         // save the data
+        CRACustomer craCustomer = dataSaver.getData();
+        craCustomer.setSIN(SINText);
         callback.goToNextStep();
 
     }
