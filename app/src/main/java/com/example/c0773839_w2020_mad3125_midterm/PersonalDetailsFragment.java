@@ -24,6 +24,7 @@ import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
 import com.example.c0773839_w2020_mad3125_midterm.Model.Gender;
 import com.example.c0773839_w2020_mad3125_midterm.Util.Validation;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
@@ -42,6 +43,7 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
 
     private DataSaver dataSaver;
     TextInputEditText firstNameEditText, lastNameEditText, dobEditText;
+    TextInputLayout dobContainer;
     RadioGroup genderRadio;
     RadioButton genderRadioSelected;
     public PersonalDetailsFragment() {
@@ -61,6 +63,7 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
         super.onViewCreated(view, savedInstanceState);
         firstNameEditText = view.findViewById(R.id.FirstNameEditText);
         lastNameEditText = view.findViewById(R.id.LastNameEditText);
+        dobContainer = view.findViewById(R.id.DOBTextInput);
         dobEditText = view.findViewById(R.id.DOBEditText);
         dobEditText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +96,13 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
 
         String dobString = dobEditText.getText().toString();
         if(dobString.trim().isEmpty()){
-            dobEditText.setError("Date of Birth can't be empty");
+            dobContainer.setError("Date of Birth can't be empty");
             return;
         }
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate dateDob = LocalDate.parse(dobString,dateTimeFormatter);
         if(!Validation.ageGreaterEqual(dateDob,18)){
-            dobEditText.setError("A person must be atleast 18 years old.");
+            dobContainer.setError("A person must be atleast 18 years old.");
             return;
         }
 
@@ -110,7 +113,8 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
         CRACustomer craCustomer = dataSaver.getData();
         craCustomer.setFirstName(firstName);
         craCustomer.setLastName(lastName);
-        craCustomer.setDateOfBirth(LocalDate.parse(dobString));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        craCustomer.setDateOfBirth(LocalDate.parse(dobString,formatter));
         Gender gender = Gender.Male;
         switch (genderRadioSelected.getText().toString()){
             case "Male":
