@@ -124,6 +124,7 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
+        String dateStr = year+"/"+month+"/"+dayOfMonth;
+        dobEditText.setText(dateStr);
     }
 }
