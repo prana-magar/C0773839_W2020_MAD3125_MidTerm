@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.c0773839_w2020_mad3125_midterm.Adapter.StepperAdapter;
+import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
+import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
 import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
 import com.example.c0773839_w2020_mad3125_midterm.Util.OntarioTax;
 import com.example.c0773839_w2020_mad3125_midterm.Util.Tax;
@@ -15,9 +17,10 @@ import com.stepstone.stepper.VerificationError;
 
 import java.util.TreeMap;
 
-public class MainActivity extends AppCompatActivity implements StepperLayout.StepperListener {
+public class MainActivity extends AppCompatActivity implements StepperLayout.StepperListener , DataSaver {
 
     private StepperLayout mStepperLayout;
+    private CRACustomer craCustomer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,5 +59,15 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
     @Override
     public void onReturn() {
 
+    }
+
+    @Override
+    public void saveData(CRACustomer craCustomer) {
+        this.craCustomer = craCustomer;
+    }
+
+    @Override
+    public CRACustomer getData() {
+        return this.craCustomer;
     }
 }
