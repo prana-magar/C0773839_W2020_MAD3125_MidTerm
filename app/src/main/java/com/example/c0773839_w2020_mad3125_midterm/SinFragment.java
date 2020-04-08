@@ -59,6 +59,8 @@ public class SinFragment extends Fragment  implements BlockingStep {
             sinTextEdit.setError("SIN NOt Valid");
             return;
         }
+
+        // save the data
         callback.goToNextStep();
 
     }
