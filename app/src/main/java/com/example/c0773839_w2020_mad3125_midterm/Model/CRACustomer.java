@@ -3,11 +3,7 @@ package com.example.c0773839_w2020_mad3125_midterm.Model;
 import java.time.LocalDate;
 import java.util.Date;
 
-enum Gender{
-    Male,
-    Femalie,
-    Other
-}
+
 
 public class CRACustomer {
 

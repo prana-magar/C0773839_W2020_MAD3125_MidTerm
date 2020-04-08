@@ -15,10 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
+import com.example.c0773839_w2020_mad3125_midterm.Model.Gender;
 import com.example.c0773839_w2020_mad3125_midterm.Util.Validation;
 import com.google.android.material.textfield.TextInputEditText;
 import com.stepstone.stepper.BlockingStep;
@@ -40,6 +43,7 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
     private DataSaver dataSaver;
     TextInputEditText firstNameEditText, lastNameEditText, dobEditText;
     RadioGroup genderRadio;
+    RadioButton genderRadioSelected;
     public PersonalDetailsFragment() {
         // Required empty public constructor
     }
@@ -100,13 +104,30 @@ public class PersonalDetailsFragment extends Fragment  implements BlockingStep ,
         }
 
         int selectedId = genderRadio.getCheckedRadioButtonId();
-        genderRadio =  findViewById(selectedId);
+        genderRadioSelected = getView().findViewById(selectedId);
 
 
+        CRACustomer craCustomer = dataSaver.getData();
+        craCustomer.setFirstName(firstName);
+        craCustomer.setLastName(lastName);
+        craCustomer.setDateOfBirth(LocalDate.parse(dobString));
+        Gender gender = Gender.Male;
+        switch (genderRadioSelected.getText().toString()){
+            case "Male":
+                gender = Gender.Male;
+                break;
 
+            case "Female":
+                gender = Gender.Female;
+                break;
 
+            case "Other":
+                gender = Gender.Other;
+                break;
+
+        }
+        craCustomer.setGender(gender);
         callback.goToNextStep();
-
 
     }
 
