@@ -39,6 +39,8 @@ public class SinFragment extends Fragment  implements BlockingStep {
 
     @Override
     public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+
+
         callback.goToNextStep();
 
     }
