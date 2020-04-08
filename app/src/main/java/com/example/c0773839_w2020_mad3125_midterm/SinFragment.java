@@ -6,9 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
@@ -33,7 +35,9 @@ public class SinFragment extends Fragment  implements BlockingStep {
     }
 
     @Override
-    public void onNextClicked(StepperLayout.OnNextClickedCallback callback) {
+    public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+        Toast.makeText(this.getContext(), "Next Clicked", Toast.LENGTH_SHORT).show();
+        callback.goToNextStep();
 
     }
 
