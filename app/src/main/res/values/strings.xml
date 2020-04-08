@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">C0773839_W2020_MAD3125_MidTerm</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
