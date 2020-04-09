@@ -5,3 +5,5 @@
 
 ### Refernces
 * https://github.com/stepstone-tech/android-material-stepper
+* https://attacomsian.com/blog/capitalize-first-letter-of-string-java
+
