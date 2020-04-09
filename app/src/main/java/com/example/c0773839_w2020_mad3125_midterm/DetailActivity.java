@@ -1,13 +1,18 @@
 package com.example.c0773839_w2020_mad3125_midterm;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -17,6 +22,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView textViewSin, textViewFullName, textViewDOB, textViewAge, textViewGender, textViewTaxFileDate,
         textViewGrossIncome, textViewEI, textViewRRSP, textViewCPP, textViewTaxableIncome, textViewTaxPayed,
         textViewFederalTax, textViewOntarioTax, textViewCarryRRSP;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +32,15 @@ public class DetailActivity extends AppCompatActivity {
         connectViews();
         textViewSin.setText(craCustomer.getSIN());
         textViewFullName.setText(craCustomer.getFullName());
+        textViewDOB.setText(formatDate(craCustomer.getDateOfBirth()));
 
     }
+
+     @RequiresApi(api = Build.VERSION_CODES.O)
+     String formatDate(LocalDate localDate){
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+         return formatter.format(localDate);
+     }
 
 
     void connectViews(){
