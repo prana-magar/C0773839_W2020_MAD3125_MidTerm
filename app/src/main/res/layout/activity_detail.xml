@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="#9BCCF3"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -27,6 +28,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
+        android:background="#E6A9A9"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#E6A9A9"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,6 +163,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#E6A9A9"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -189,14 +193,15 @@
     </LinearLayout>
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/linearLayout6"
-    android:layout_marginTop="25dp"
-    android:orientation="horizontal"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#E8EDB4"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <TextView
             android:id="@+id/textView17"
@@ -210,17 +215,18 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewDetailGrossIncome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="123"
-        android:gravity="left"
+        <TextView
+            android:id="@+id/textViewDetailGrossIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/price"
+            android:gravity="left"
 
-        android:textSize="18sp"
-        android:textStyle="bold" />
-</LinearLayout>
+            android:text="123"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
     <LinearLayout
@@ -250,9 +256,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -263,6 +270,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#E8EDB4"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -285,9 +293,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -309,7 +318,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:text="RRSP: "
+            android:text="RRSP Contribution: "
 
             android:textColor="#7F7F7F"
             android:textSize="18sp"
@@ -320,9 +329,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -332,6 +342,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#E8EDB4"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -354,9 +365,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -366,7 +378,8 @@
         android:id="@+id/linearLayout11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="60dp"
+        android:background="#96DED7"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -389,9 +402,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -423,18 +437,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout13"
         android:layout_marginTop="5dp"
+        android:background="#96DED7"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -457,9 +473,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -491,9 +508,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="123"
+            android:drawableLeft="@drawable/price"
             android:gravity="left"
 
+            android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>

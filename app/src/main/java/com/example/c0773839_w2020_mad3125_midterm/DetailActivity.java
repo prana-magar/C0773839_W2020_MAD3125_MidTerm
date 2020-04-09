@@ -13,6 +13,8 @@ import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
 import com.example.c0773839_w2020_mad3125_midterm.Util.OntarioTax;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -38,18 +40,23 @@ public class DetailActivity extends AppCompatActivity {
         textViewAge.setText( String.valueOf(craCustomer.getAge()));
         textViewGender.setText(craCustomer.getGender().name());
         textViewTaxFileDate.setText(formatDate(craCustomer.getTaxFilingDate()));
-        textViewGrossIncome.setText(String.valueOf(craCustomer.getGrossIncome()));
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        symbols.setGroupingSeparator(',');
+        symbols.setDecimalSeparator('.');
+        textViewGrossIncome.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getGrossIncome()));
+
+
 
         FederalTax tax = new FederalTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
         OntarioTax ontarioTax = new OntarioTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
-        textViewEI.setText(String.valueOf(tax.getEI()));
-        textViewRRSP.setText(String.valueOf(craCustomer.getRRSP()));
-        textViewCPP.setText(String.valueOf(tax.getCPP()));
-        textViewTaxableIncome.setText(String.valueOf(tax.getTaxableIncome()));
-        textViewTaxPayed.setText(String.valueOf(tax.getTax() + ontarioTax.getTax()));
-        textViewFederalTax.setText(String.valueOf(tax.getTax()));
-        textViewOntarioTax.setText(String.valueOf(ontarioTax.getTax()));
-        textViewCarryRRSP.setText(String.valueOf(craCustomer.getCarryForwardRRSP()));
+        textViewEI.setText(new DecimalFormat("#,###.##",symbols).format(tax.getEI()));
+        textViewRRSP.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getRRSP()));
+        textViewCPP.setText(new DecimalFormat("#,###.##",symbols).format(tax.getCPP()));
+        textViewTaxableIncome.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTaxableIncome()));
+        textViewTaxPayed.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTax() + ontarioTax.getTax()));
+        textViewFederalTax.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTax()));
+        textViewOntarioTax.setText(new DecimalFormat("#,###.##",symbols).format(ontarioTax.getTax()));
+        textViewCarryRRSP.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getCarryForwardRRSP()));
 
 
     }
