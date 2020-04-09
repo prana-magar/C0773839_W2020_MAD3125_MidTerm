@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
+import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
 import com.google.android.material.textfield.TextInputEditText;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
@@ -88,6 +89,11 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
         }
         catch (NumberFormatException e){
             RRSPEditText.setError("Invalid Format");
+            return;
+        }
+
+        if(rrsp > grossIncome*0.18){
+            RRSPEditText.setError("RRSP Exceeds allowed Amount: "+ grossIncome*0.18 );
             return;
         }
 
