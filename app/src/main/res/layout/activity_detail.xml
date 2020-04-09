@@ -516,11 +516,15 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-
-
-
-
-
+    <Button
+        android:id="@+id/buttonRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Start Again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

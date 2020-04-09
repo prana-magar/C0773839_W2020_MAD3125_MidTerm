@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,6 +28,8 @@ public class DetailActivity extends AppCompatActivity {
     TextView textViewSin, textViewFullName, textViewDOB, textViewAge, textViewGender, textViewTaxFileDate,
         textViewGrossIncome, textViewEI, textViewRRSP, textViewCPP, textViewTaxableIncome, textViewTaxPayed,
         textViewFederalTax, textViewOntarioTax, textViewCarryRRSP;
+
+    Button restartBtn;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,12 @@ public class DetailActivity extends AppCompatActivity {
         textViewOntarioTax.setText(new DecimalFormat("#,###.##",symbols).format(ontarioTax.getTax()));
         textViewCarryRRSP.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getCarryForwardRRSP()));
 
+        restartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, MainActivity.class));
+            }
+        });
 
     }
 
@@ -84,5 +94,6 @@ public class DetailActivity extends AppCompatActivity {
         textViewFederalTax = findViewById(R.id.textViewDetailFederalTax);
         textViewOntarioTax = findViewById(R.id.textViewDetailOntarioTax);
         textViewCarryRRSP = findViewById(R.id.textViewDetailCarryRRSP);
+        restartBtn = findViewById(R.id.buttonRestart);
     }
 }
