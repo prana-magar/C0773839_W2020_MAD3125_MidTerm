@@ -49,11 +49,7 @@ public class DetailActivity extends AppCompatActivity {
         textViewTaxPayed.setText(String.valueOf(tax.getTax() + ontarioTax.getTax()));
         textViewFederalTax.setText(String.valueOf(tax.getTax()));
         textViewOntarioTax.setText(String.valueOf(ontarioTax.getTax()));
-
-
-
-
-
+        textViewCarryRRSP.setText(String.valueOf(craCustomer.getCarryForwardRRSP()));
 
 
     }
