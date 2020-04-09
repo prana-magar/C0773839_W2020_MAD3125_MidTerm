@@ -30,14 +30,6 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
         mStepperLayout.setAdapter(new StepperAdapter(getSupportFragmentManager(), this));
         mStepperLayout.setListener(this);
 
-
-        OntarioTax tax = new OntarioTax(100000.0,4000.0);
-        FederalTax federalTax = new FederalTax(100000.0,4000.0);
-        System.out.println("Tax"+tax.getTax());
-        System.out.println("FTax"+federalTax.getTax());
-
-
-
     }
 
     @Override

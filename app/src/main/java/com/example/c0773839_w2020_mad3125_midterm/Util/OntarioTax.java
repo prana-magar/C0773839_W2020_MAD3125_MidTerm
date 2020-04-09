@@ -2,7 +2,7 @@ package com.example.c0773839_w2020_mad3125_midterm.Util;
 
 public class OntarioTax  extends Tax{
 
-    public OntarioTax(Double grossIncome, Double RRSP) {
+    public OntarioTax(float grossIncome, float RRSP) {
         super(grossIncome, RRSP);
     }
 
