@@ -65,28 +65,11 @@ public abstract class Tax {
         return (this.RRSP <= this.grossIncome*0.18);
     }
 
-    public double getTaxableIncome(){
-        return this.grossIncome - (getCPP() + getEI() +getRRSP());
+    public float getTaxableIncome(){
+        return (float)(this.grossIncome - (getCPP() + getEI() +getRRSP()));
     }
 
-    public double getTax(){
-        if (grossIncome == 0.0f ){
-            System.out.println("Sett Gross income first and RRSP ");
-            return 0;
-        }
-
-        double tax_rate = 0;
-        try {
-            tax_rate = this.getTaxRate(getTaxableIncome());
-        }
-        catch (NullPointerException ne){
-            System.out.println("Couldnt find in tax bracket");
-        }
-
-        double taxableIncome = getTaxableIncome();
-        return  tax_rate/100 * taxableIncome;
-
-    }
+    public abstract double getTax();
 
 
 
