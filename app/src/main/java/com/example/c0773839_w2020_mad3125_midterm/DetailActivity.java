@@ -73,7 +73,7 @@ public class DetailActivity extends AppCompatActivity {
 
      @RequiresApi(api = Build.VERSION_CODES.O)
      String formatDate(LocalDate localDate){
-         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd, MMM YYYY");
          return formatter.format(localDate);
      }
 
