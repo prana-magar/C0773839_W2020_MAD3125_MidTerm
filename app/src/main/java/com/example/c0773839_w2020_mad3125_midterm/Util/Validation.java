@@ -11,7 +11,7 @@ import java.util.Date;
 public class Validation {
 
     public static boolean sin(String SIN){
-        return SIN.matches("^(\\d{3}-\\d{3}-\\d{3})|(\\d{9})$\n");
+        return SIN.trim().matches("^(\\d{3}-\\d{3}-\\d{3})|(\\d{9})$");
     }
 
 
