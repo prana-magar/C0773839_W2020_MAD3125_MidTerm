@@ -13,10 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
+import com.google.android.material.textfield.TextInputEditText;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
+
+import java.text.ParseException;
 
 
 /**
@@ -24,6 +28,7 @@ import com.stepstone.stepper.VerificationError;
  */
 public class IncomeFragmet extends Fragment implements BlockingStep {
 
+    TextInputEditText grossIncomeEditText, RRSPEditText;
 
     private  DataSaver dataSaver;
     public IncomeFragmet() {
@@ -39,7 +44,16 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        grossIncomeEditText = view.findViewById(R.id.GrossIncomeEditText);
+        RRSPEditText = view.findViewById(R.id.RRSPEditText);
+    }
+
+    @Override
     public void onNextClicked(final StepperLayout.OnNextClickedCallback callback) {
+
+
 
         callback.goToNextStep();
 
@@ -47,6 +61,39 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
 
     @Override
     public void onCompleteClicked(StepperLayout.OnCompleteClickedCallback callback) {
+
+        float grossIncome = 0.0F;
+
+        try{
+            String grossIncomeString = grossIncomeEditText.getText().toString();
+            if(grossIncomeString.isEmpty()){
+                grossIncomeEditText.setError("Cant be empty");
+                return;
+            }
+            grossIncome = Float.parseFloat(grossIncomeString);
+        }
+        catch (NumberFormatException e){
+            grossIncomeEditText.setError("Invalid Format");
+            return;
+        }
+
+        float rrsp = 0.0F;
+
+        try{
+            String rrspString = RRSPEditText.getText().toString();
+            if(!rrspString.isEmpty()){
+                rrsp = Float.parseFloat(rrspString);
+            }
+
+        }
+        catch (NumberFormatException e){
+            RRSPEditText.setError("Invalid Format");
+            return;
+        }
+
+        CRACustomer craCustomer = dataSaver.getData();
+        craCustomer.setGrossIncome(grossIncome);
+        craCustomer.setRRSP(rrsp);
         callback.complete();
 
     }
