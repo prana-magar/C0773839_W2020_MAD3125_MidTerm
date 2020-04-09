@@ -33,6 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         textViewSin.setText(craCustomer.getSIN());
         textViewFullName.setText(craCustomer.getFullName());
         textViewDOB.setText(formatDate(craCustomer.getDateOfBirth()));
+        textViewAge.setText(craCustomer.getAge());
 
     }
 
