@@ -42,7 +42,9 @@ public class DetailActivity extends AppCompatActivity {
         FederalTax tax = new FederalTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
 
         textViewEI.setText(String.valueOf(tax.getEI()));
+        textViewRRSP.setText(String.valueOf(craCustomer.getRRSP()));
         
+
 
 
     }
