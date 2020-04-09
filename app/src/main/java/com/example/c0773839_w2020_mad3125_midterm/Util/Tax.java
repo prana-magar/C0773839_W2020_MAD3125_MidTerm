@@ -8,33 +8,33 @@ import java.util.TreeMap;
 public abstract class Tax {
 
 
-    Double grossIncome;
-    Double RRSP;
+    float grossIncome;
+    float RRSP;
 
 
-    public Tax(Double grossIncome, Double RRSP) {
+    public Tax(float grossIncome, float RRSP) {
         this.grossIncome = grossIncome;
         this.RRSP = RRSP;
     }
 
-    public void setGrossIncome(Double grossIncome){
+    public void setGrossIncome(float grossIncome){
         this.grossIncome = grossIncome;
     }
-    public void setRRSP(Double RRSP){
+    public void setRRSP(float RRSP){
         this.RRSP = RRSP
         ;
     }
 
-    private double getCPP(){
-        if (grossIncome == null){
+    private float getCPP(){
+        if (grossIncome == 0.0f){
             System.out.println("Sett Gross income firstt");
             return 0;
         }
-        return this.grossIncome>= 57400? 2927.40: this.grossIncome* 0.051;
+        return (float)(this.grossIncome>= 57400? 2927.40: this.grossIncome* 0.051);
     }
 
     private double getEI(){
-        if (grossIncome == null){
+        if (grossIncome == 0.0f){
             System.out.println("Sett Gross income firstt");
             return 0;
         }
@@ -42,7 +42,7 @@ public abstract class Tax {
     }
 
     private double getRRSP(){
-        if (grossIncome == null){
+        if (grossIncome == 0.0f){
             System.out.println("Sett Gross income firstt");
             return 0;
         }
@@ -58,8 +58,8 @@ public abstract class Tax {
 
 
     public boolean validateRRSP(){
-        if (grossIncome == null || this.RRSP  == null){
-            System.out.println("Sett Gross income first and RRSP ");
+        if (grossIncome == 0.0f ){
+            System.out.println("Sett Gross income first  ");
             return false;
         }
         return (this.RRSP <= this.grossIncome*0.18);
@@ -70,7 +70,7 @@ public abstract class Tax {
     }
 
     public double getTax(){
-        if (grossIncome == null || this.RRSP  == null){
+        if (grossIncome == 0.0f ){
             System.out.println("Sett Gross income first and RRSP ");
             return 0;
         }

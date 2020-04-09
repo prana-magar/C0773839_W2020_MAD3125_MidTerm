@@ -1,7 +1,14 @@
 package com.example.c0773839_w2020_mad3125_midterm.Model;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
+
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 
@@ -15,12 +22,13 @@ public class CRACustomer implements Serializable {
     private Gender gender;
     private Float grossIncome;
     private Float RRSP;
-
+    private LocalDate taxFilingDate;
 
     public CRACustomer() {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public CRACustomer(String SIN, String firstName, String lastName, LocalDate dateOfBirth, Gender gender, Float grossIncome, Float RRSP) {
         this.SIN = SIN;
         this.firstName = firstName;
@@ -29,8 +37,12 @@ public class CRACustomer implements Serializable {
         this.gender = gender;
         this.grossIncome = grossIncome;
         this.RRSP = RRSP;
+        this.taxFilingDate = LocalDate.now();
     }
 
+    public String getFullName() {
+        return this.lastName +", "+ this.firstName;
+    }
     public String getSIN() {
         return SIN;
     }
@@ -85,5 +97,15 @@ public class CRACustomer implements Serializable {
 
     public void setRRSP(Float RRSP) {
         this.RRSP = RRSP;
+    }
+
+    public Float getCarryForwardRRSP() {
+        float eligible_rrsp = this.getGrossIncome()*0.18f;
+        return eligible_rrsp - this.getRRSP() ;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public int getAge(){
+        return Period.between(this.getDateOfBirth(), LocalDate.now()).getYears();
     }
 }

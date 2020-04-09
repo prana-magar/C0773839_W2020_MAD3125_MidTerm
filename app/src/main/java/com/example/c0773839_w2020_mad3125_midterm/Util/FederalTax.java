@@ -1,7 +1,7 @@
 package com.example.c0773839_w2020_mad3125_midterm.Util;
 
 public class FederalTax  extends Tax{
-    public FederalTax(Double grossIncome, Double RRSP) {
+    public FederalTax(float grossIncome, float RRSP) {
         super(grossIncome, RRSP);
     }
 
