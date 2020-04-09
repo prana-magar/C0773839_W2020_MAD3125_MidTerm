@@ -35,6 +35,7 @@ public class DetailActivity extends AppCompatActivity {
         textViewDOB.setText(formatDate(craCustomer.getDateOfBirth()));
         textViewAge.setText( String.valueOf(craCustomer.getAge()));
         textViewGender.setText(craCustomer.getGender().name());
+        textViewTaxFileDate.setText(formatDate(craCustomer.getTaxFilingDate()));
 
     }
 

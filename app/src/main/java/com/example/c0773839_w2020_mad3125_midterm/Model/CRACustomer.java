@@ -37,7 +37,7 @@ public class CRACustomer implements Serializable {
         this.gender = gender;
         this.grossIncome = grossIncome;
         this.RRSP = RRSP;
-        this.taxFilingDate = LocalDate.now();
+
     }
 
     public String getFullName() {
@@ -77,6 +77,7 @@ public class CRACustomer implements Serializable {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+        this.taxFilingDate = LocalDate.now();
     }
 
     public void setLastName(String lastName) {
@@ -107,5 +108,9 @@ public class CRACustomer implements Serializable {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public int getAge(){
         return Period.between(this.getDateOfBirth(), LocalDate.now()).getYears();
+    }
+
+    public LocalDate getTaxFilingDate() {
+        return taxFilingDate;
     }
 }
