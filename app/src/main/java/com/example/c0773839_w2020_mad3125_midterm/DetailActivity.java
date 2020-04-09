@@ -43,7 +43,8 @@ public class DetailActivity extends AppCompatActivity {
 
         textViewEI.setText(String.valueOf(tax.getEI()));
         textViewRRSP.setText(String.valueOf(craCustomer.getRRSP()));
-        
+        textViewCPP.setText(String.valueOf(tax.getCPP()));
+
 
 
 
