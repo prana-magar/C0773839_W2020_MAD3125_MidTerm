@@ -47,6 +47,8 @@ public class DetailActivity extends AppCompatActivity {
         textViewCPP.setText(String.valueOf(tax.getCPP()));
         textViewTaxableIncome.setText(String.valueOf(tax.getTaxableIncome()));
         textViewTaxPayed.setText(String.valueOf(tax.getTax() + ontarioTax.getTax()));
+        textViewFederalTax.setText(String.valueOf(tax.getTax()));
+        textViewOntarioTax.setText(String.valueOf(ontarioTax.getTax()));
 
 
 
