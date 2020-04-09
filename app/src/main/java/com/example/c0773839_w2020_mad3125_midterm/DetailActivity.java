@@ -36,6 +36,8 @@ public class DetailActivity extends AppCompatActivity {
         textViewAge.setText( String.valueOf(craCustomer.getAge()));
         textViewGender.setText(craCustomer.getGender().name());
         textViewTaxFileDate.setText(formatDate(craCustomer.getTaxFilingDate()));
+        textViewGrossIncome.setText(String.valueOf(craCustomer.getGrossIncome()));
+        
 
     }
 
