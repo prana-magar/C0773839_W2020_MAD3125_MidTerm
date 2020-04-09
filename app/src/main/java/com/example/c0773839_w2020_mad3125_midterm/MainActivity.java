@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements StepperLayout.Ste
     @Override
     public void onCompleted(View completeButton) {
         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        intent.putExtra("craCustomer",craCustomer);
         startActivity(intent);
 
     }

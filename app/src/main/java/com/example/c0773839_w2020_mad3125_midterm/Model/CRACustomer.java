@@ -1,11 +1,12 @@
 package com.example.c0773839_w2020_mad3125_midterm.Model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
 
 
-public class CRACustomer {
+public class CRACustomer implements Serializable {
 
     private String SIN;
     private String firstName;
