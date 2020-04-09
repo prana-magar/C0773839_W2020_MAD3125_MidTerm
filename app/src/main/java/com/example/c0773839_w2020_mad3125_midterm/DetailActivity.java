@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
+import com.example.c0773839_w2020_mad3125_midterm.Util.OntarioTax;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -40,12 +41,14 @@ public class DetailActivity extends AppCompatActivity {
         textViewGrossIncome.setText(String.valueOf(craCustomer.getGrossIncome()));
 
         FederalTax tax = new FederalTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
-
+        OntarioTax ontarioTax = new OntarioTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
         textViewEI.setText(String.valueOf(tax.getEI()));
         textViewRRSP.setText(String.valueOf(craCustomer.getRRSP()));
         textViewCPP.setText(String.valueOf(tax.getCPP()));
         textViewTaxableIncome.setText(String.valueOf(tax.getTaxableIncome()));
-        
+        textViewTaxPayed.setText(String.valueOf(tax.getTax() + ontarioTax.getTax()));
+
+
 
 
 
