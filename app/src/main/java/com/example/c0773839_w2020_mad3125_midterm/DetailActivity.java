@@ -25,6 +25,7 @@ public class DetailActivity extends AppCompatActivity {
         craCustomer = (CRACustomer) intent.getSerializableExtra("craCustomer");
         connectViews();
         textViewSin.setText(craCustomer.getSIN());
+        textViewFullName.setText(craCustomer.getFullName());
 
     }
 
