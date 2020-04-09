@@ -226,9 +226,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -263,9 +263,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -302,8 +302,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -339,8 +340,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -376,8 +378,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -414,8 +417,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -450,8 +454,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -487,8 +492,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -523,8 +529,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableLeft="@drawable/price"
-            android:gravity="left"
+            android:drawableEnd="@drawable/price"
 
+            android:gravity="left"
             android:text="123"
             android:textSize="18sp"
             android:textStyle="bold" />

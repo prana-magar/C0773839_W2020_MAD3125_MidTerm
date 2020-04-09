@@ -47,20 +47,20 @@ public class DetailActivity extends AppCompatActivity {
         DecimalFormatSymbols symbols = new DecimalFormatSymbols();
         symbols.setGroupingSeparator(',');
         symbols.setDecimalSeparator('.');
-        textViewGrossIncome.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getGrossIncome()));
+        textViewGrossIncome.setText(new DecimalFormat("$ #,###.##",symbols).format(craCustomer.getGrossIncome()));
 
 
 
         FederalTax tax = new FederalTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
         OntarioTax ontarioTax = new OntarioTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
-        textViewEI.setText(new DecimalFormat("#,###.##",symbols).format(tax.getEI()));
-        textViewRRSP.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getRRSP()));
-        textViewCPP.setText(new DecimalFormat("#,###.##",symbols).format(tax.getCPP()));
-        textViewTaxableIncome.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTaxableIncome()));
-        textViewTaxPayed.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTax() + ontarioTax.getTax()));
-        textViewFederalTax.setText(new DecimalFormat("#,###.##",symbols).format(tax.getTax()));
-        textViewOntarioTax.setText(new DecimalFormat("#,###.##",symbols).format(ontarioTax.getTax()));
-        textViewCarryRRSP.setText(new DecimalFormat("#,###.##",symbols).format(craCustomer.getCarryForwardRRSP()));
+        textViewEI.setText(new DecimalFormat("$ #,###.##",symbols).format(tax.getEI()));
+        textViewRRSP.setText(new DecimalFormat("$ #,###.##",symbols).format(craCustomer.getRRSP()));
+        textViewCPP.setText(new DecimalFormat("$ #,###.##",symbols).format(tax.getCPP()));
+        textViewTaxableIncome.setText(new DecimalFormat("$ #,###.##",symbols).format(tax.getTaxableIncome()));
+        textViewTaxPayed.setText(new DecimalFormat("$ #,###.##",symbols).format(tax.getTax() + ontarioTax.getTax()));
+        textViewFederalTax.setText(new DecimalFormat("$ #,###.##",symbols).format(tax.getTax()));
+        textViewOntarioTax.setText(new DecimalFormat("$ #,###.##",symbols).format(ontarioTax.getTax()));
+        textViewCarryRRSP.setText(new DecimalFormat("$ #,###.##",symbols).format(craCustomer.getCarryForwardRRSP()));
 
         restartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
