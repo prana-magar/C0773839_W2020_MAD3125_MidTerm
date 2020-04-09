@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="#FFFFFF"
+        android:drawableStart="@drawable/login"
         android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -50,6 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:drawableEnd="@drawable/person"
             android:gravity="left"
             android:text="TextView"
             android:textSize="18sp"
@@ -86,8 +88,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
+            android:drawableEnd="@drawable/birthday"
 
+            android:gravity="left"
             android:text="TextView"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -190,8 +193,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
+            android:drawableEnd="@drawable/calendar"
 
+            android:gravity="left"
             android:text="TextView"
             android:textSize="18sp"
             android:textStyle="bold" />
