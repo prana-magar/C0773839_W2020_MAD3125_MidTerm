@@ -25,7 +25,7 @@ public abstract class Tax {
         ;
     }
 
-    private float getCPP(){
+    public float getCPP(){
         if (grossIncome == 0.0f){
             System.out.println("Sett Gross income firstt");
             return 0;
@@ -33,7 +33,7 @@ public abstract class Tax {
         return (float)(this.grossIncome>= 57400? 2927.40: this.grossIncome* 0.051);
     }
 
-    private double getEI(){
+    public double getEI(){
         if (grossIncome == 0.0f){
             System.out.println("Sett Gross income firstt");
             return 0;
@@ -65,7 +65,7 @@ public abstract class Tax {
         return (this.RRSP <= this.grossIncome*0.18);
     }
 
-    private double getTaxableIncome(){
+    public double getTaxableIncome(){
         return this.grossIncome - (getCPP() + getEI() +getRRSP());
     }
 

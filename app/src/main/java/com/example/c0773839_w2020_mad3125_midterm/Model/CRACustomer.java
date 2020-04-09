@@ -75,6 +75,7 @@ public class CRACustomer implements Serializable {
         this.SIN = SIN;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setFirstName(String firstName) {
         this.firstName = firstName;
         this.taxFilingDate = LocalDate.now();

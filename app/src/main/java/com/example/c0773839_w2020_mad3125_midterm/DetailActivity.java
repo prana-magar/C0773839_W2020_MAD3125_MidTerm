@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
+import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -37,7 +38,12 @@ public class DetailActivity extends AppCompatActivity {
         textViewGender.setText(craCustomer.getGender().name());
         textViewTaxFileDate.setText(formatDate(craCustomer.getTaxFilingDate()));
         textViewGrossIncome.setText(String.valueOf(craCustomer.getGrossIncome()));
+
+        FederalTax tax = new FederalTax(craCustomer.getGrossIncome(),craCustomer.getRRSP());
+
+        textViewEI.setText(String.valueOf(tax.getEI()));
         
+
 
     }
 
