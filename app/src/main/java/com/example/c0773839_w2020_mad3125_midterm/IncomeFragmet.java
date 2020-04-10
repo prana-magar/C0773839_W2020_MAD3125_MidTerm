@@ -17,6 +17,7 @@ import com.example.c0773839_w2020_mad3125_midterm.Model.CRACustomer;
 import com.example.c0773839_w2020_mad3125_midterm.Model.DataSaver;
 import com.example.c0773839_w2020_mad3125_midterm.Util.FederalTax;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.stepstone.stepper.BlockingStep;
 import com.stepstone.stepper.StepperLayout;
 import com.stepstone.stepper.VerificationError;
@@ -30,6 +31,7 @@ import java.text.ParseException;
 public class IncomeFragmet extends Fragment implements BlockingStep {
 
     TextInputEditText grossIncomeEditText, RRSPEditText;
+    TextInputLayout grossHolder, RRSPHolder;
 
     private  DataSaver dataSaver;
     public IncomeFragmet() {
@@ -49,6 +51,8 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
         super.onViewCreated(view, savedInstanceState);
         grossIncomeEditText = view.findViewById(R.id.GrossIncomeEditText);
         RRSPEditText = view.findViewById(R.id.RRSPEditText);
+        grossHolder = view.findViewById(R.id.GrossIncomeHolder);
+        RRSPHolder = view.findViewById(R.id.RRSP_holder);
     }
 
     @Override
@@ -68,13 +72,13 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
         try{
             String grossIncomeString = grossIncomeEditText.getText().toString();
             if(grossIncomeString.isEmpty()){
-                grossIncomeEditText.setError("Cant be empty");
+                grossHolder.setError("Cant be empty");
                 return;
             }
             grossIncome = Float.parseFloat(grossIncomeString);
         }
         catch (NumberFormatException e){
-            grossIncomeEditText.setError("Invalid Format");
+            grossHolder.setError("Invalid Format");
             return;
         }
 
@@ -88,12 +92,12 @@ public class IncomeFragmet extends Fragment implements BlockingStep {
 
         }
         catch (NumberFormatException e){
-            RRSPEditText.setError("Invalid Format");
+            RRSPHolder.setError("Invalid Format");
             return;
         }
 
         if(rrsp > grossIncome*0.18){
-            RRSPEditText.setError("RRSP Exceeds allowed Amount: "+ grossIncome*0.18 );
+            RRSPHolder.setError("RRSP Exceeds allowed Amount: "+ grossIncome*0.18 );
             return;
         }
 
