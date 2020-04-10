@@ -54,7 +54,6 @@ public abstract class Tax {
         return RRSP;
     }
 
-     abstract double getTaxRate(Double grossIncome);
 
 
     public boolean validateRRSP(){
